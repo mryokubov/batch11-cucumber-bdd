@@ -12,3 +12,7 @@ Feature: NopCommerce Login Feature
   Scenario: NopCommerce User Login Negative Scenario
     When user uses login credentials "kevin.lee@gmail.com" and "Kevin888!" and clicks on login button
     Then user should see error "Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect"
+
+  Scenario: NopCommerce Not Registered User Login Negative Scenario
+    When user uses login credentials "bob.lee@gmail.com" and "Kevin123!" and clicks on login button
+    Then user should see error "Login was unsuccessful. Please correct the errors and try again. No customer account found"
