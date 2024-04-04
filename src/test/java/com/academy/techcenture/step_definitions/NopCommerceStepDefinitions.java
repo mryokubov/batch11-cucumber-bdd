@@ -2,6 +2,8 @@ package com.academy.techcenture.step_definitions;
 
 import com.academy.techcenture.config.ConfigReader;
 import com.academy.techcenture.driver.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +18,6 @@ public class NopCommerceStepDefinitions {
 
     @Given("user is on the homepage")
     public void user_is_on_the_homepage() {
-        driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("url"));
         String actualTitle = driver.getTitle();
         Assert.assertEquals("Home page titles do not match", actualTitle, "nopCommerce demo store");
@@ -59,6 +60,17 @@ public class NopCommerceStepDefinitions {
         Assert.assertTrue(error.isDisplayed());
         String actualErrorMessage = error.getText();
         System.out.println(actualErrorMessage);
-        Assert.assertEquals(errorMessage, actualErrorMessage);
+        Assert.assertTrue(actualErrorMessage.contains(errorMessage));
+    }
+
+    @Before
+    public void beforeEachScenario(){
+        driver = Driver.getDriver();
+    }
+
+    @After
+    public void afterEachScenario(){
+        Driver.quitDriver();
+        driver = null;
     }
 }

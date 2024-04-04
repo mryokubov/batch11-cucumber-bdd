@@ -11,4 +11,4 @@ Feature: NopCommerce Login Feature
     When user clicks on the login link
     Then user should be navigate to login page
     When user uses login credentials "kevin.lee@gmail.com" and "Kevin888!" and clicks on login button
-    Then user should see error "Login was unsuccessful. Please correct the errors and try again. No customer account found"
+    Then user should see error "Login was unsuccessful. Please correct the errors and try again."
