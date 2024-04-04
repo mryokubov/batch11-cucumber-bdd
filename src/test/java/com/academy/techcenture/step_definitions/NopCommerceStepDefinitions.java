@@ -53,4 +53,12 @@ public class NopCommerceStepDefinitions {
         Assert.assertTrue(logOutLink.isDisplayed());
     }
 
+    @Then("user should see error {string}")
+    public void userShouldSeeError(String errorMessage) {
+        WebElement error = driver.findElement(By.xpath("//div[contains(@class,'validation-summary-errors')]"));
+        Assert.assertTrue(error.isDisplayed());
+        String actualErrorMessage = error.getText();
+        System.out.println(actualErrorMessage);
+        Assert.assertEquals(errorMessage, actualErrorMessage);
+    }
 }
