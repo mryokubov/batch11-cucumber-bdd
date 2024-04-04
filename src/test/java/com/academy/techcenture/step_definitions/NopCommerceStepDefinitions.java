@@ -57,10 +57,9 @@ public class NopCommerceStepDefinitions {
     @Then("user should see error {string}")
     public void userShouldSeeError(String errorMessage) {
         WebElement error = driver.findElement(By.xpath("//div[contains(@class,'validation-summary-errors')]"));
-        Assert.assertTrue(error.isDisplayed());
-        String actualErrorMessage = error.getText();
-        System.out.println(actualErrorMessage);
-        Assert.assertTrue(actualErrorMessage.contains(errorMessage));
+        String trimError = error.getText().trim();
+        String compressedError = trimError.replaceAll("\\s+", " ");
+        Assert.assertEquals(compressedError,"Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect");
     }
 
     @Before
