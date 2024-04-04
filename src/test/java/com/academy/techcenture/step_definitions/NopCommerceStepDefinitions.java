@@ -55,11 +55,11 @@ public class NopCommerceStepDefinitions {
     }
 
     @Then("user should see error {string}")
-    public void userShouldSeeError(String expectMessage ) {
+    public void userShouldSeeError(String expectErrorMessage ) {
         WebElement error = driver.findElement(By.xpath("//div[contains(@class,'validation-summary-errors')]"));
         String trimError = error.getText().trim();
         String actualErrorMessage = trimError.replaceAll("\\s+", " ");
-        Assert.assertEquals("Not correct error message",expectMessage,actualErrorMessage);
+        Assert.assertEquals("Not correct error message",expectErrorMessage,actualErrorMessage);
     }
 
     @Before
