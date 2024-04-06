@@ -1,5 +1,4 @@
 Feature: NopCommerce User Registration Feature
-  @register
   Scenario: NopCommerce Register New User
     Given user is on the homepage
     When user clicks on the login link
@@ -9,7 +8,7 @@ Feature: NopCommerce User Registration Feature
     And user clicks on gender as "male"
     And user enters "Kevin" for firstname
     And user enters "Lee" for lastname
-    And user enters 15, "May", 1981 for dob
+    And user enters "15", "May", "1981" for dob
     And user enters "kevin.lee11@gmail.com"
     And user enters "Kevin Technologies LLC" for company
     And user "checks" newsletter checkbox
@@ -20,4 +19,3 @@ Feature: NopCommerce User Registration Feature
     When user clicks on continue button
     Then user is on the homepage
     And user checks if they can log in with newly created credentials "kevin.lee11@gmail.com" and "Kev123!"
-

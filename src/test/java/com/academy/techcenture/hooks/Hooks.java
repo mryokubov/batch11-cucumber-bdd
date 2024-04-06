@@ -13,7 +13,7 @@ public class Hooks {
 
     @After
     public void afterEachScenario(){
-//        Driver.quitDriver();
+        Driver.quitDriver();
     }
 
 }
