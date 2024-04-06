@@ -28,7 +28,7 @@ Feature: NopCommerce User Registration Feature with Scenario Outline
     | female |   Linda   |  Lee     |  14 | May   | 1988 | mary.lee20@gmail.com| Techcenture LLC |    unchecks| Kev123!  |    Kev123!      | Your registration completed |
 
 
-    @smoke
+#    @smoke
     Examples:
     |gender  | firstname | lastname | day | month | year | email                | company_name    | newsletter | password | confirm_password|   success_message           |
     | female |   Linda   |  Lee     |  14 | May   | 1988 | linda.lee20@gmail.com| Techcenture LLC |    unchecks| Kev123!  |    Kev123!      | Your registration completed |
