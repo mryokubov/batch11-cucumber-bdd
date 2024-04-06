@@ -7,7 +7,7 @@ Feature: NopCommerce Login Feature
 
   Scenario: NopCommerce User Login Positive Scenario
     When user uses login credentials "kevin.lee@gmail.com" and "Kevin123!" and clicks on login button
-    Then user should be able to log in
+    Then user should see my account and logout links on top
 
   Scenario: NopCommerce User Login Negative Scenario
     When user uses login credentials "kevin.lee@gmail.com" and "Kevin888!" and clicks on login button

@@ -2,6 +2,9 @@ package com.academy.techcenture.step_definitions;
 
 import com.academy.techcenture.config.ConfigReader;
 import static com.academy.techcenture.driver.Driver.*;
+
+import io.cucumber.java.an.E;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class NopCommerceStepDefinitions {
+public class NopCommerceLoginStepDefinitions {
     
 
     @Given("user is on the homepage")
@@ -42,8 +45,8 @@ public class NopCommerceStepDefinitions {
         Assert.assertTrue(loginButton.isEnabled());
         loginButton.click();
     }
-    @Then("user should be able to log in")
-    public void user_should_be_able_to_log_in() {
+    @Then("user should see my account and logout links on top")
+    public void user_should_see_my_account_and_logout_links_on_top() {
         WebElement myAccountLink = getDriver().findElement(By.linkText("My account"));
         Assert.assertTrue(myAccountLink.isDisplayed());
         WebElement logOutLink = getDriver().findElement(By.linkText("Log out"));
@@ -57,5 +60,19 @@ public class NopCommerceStepDefinitions {
         String actualErrorMessage = error.getText();
         System.out.println(actualErrorMessage);
         Assert.assertTrue(actualErrorMessage.contains(errorMessage));
+    }
+
+    @And("user logs out from their account")
+    public void userLogsOutFromTheirAccount() {
+
+        try{
+            WebElement logOutLink = getDriver().findElement(By.linkText("Log out"));
+            Assert.assertTrue(logOutLink.isDisplayed());
+            logOutLink.click();
+        }catch (Exception e){
+
+        }
+
+
     }
 }
