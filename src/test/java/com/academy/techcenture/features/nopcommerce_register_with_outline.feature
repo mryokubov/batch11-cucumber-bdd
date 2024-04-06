@@ -1,6 +1,6 @@
-Feature: NopCommerce User Registration Feature
-  @register
-  Scenario Outline: NopCommerce Register New User
+@regression
+Feature: NopCommerce User Registration Feature with Scenario Outline
+  Scenario Outline: NopCommerce Register New User with Scenario Outline
     Given user is on the homepage
     When user clicks on the login link
     Then user should be navigate to login page
@@ -24,6 +24,12 @@ Feature: NopCommerce User Registration Feature
     Examples:
     |gender  | firstname | lastname | day | month | year | email                | company_name    | newsletter | password | confirm_password|   success_message           |
     | male   |   Kevin   |  Lee     |  12 | April | 1981 | kevin.lee20@gmail.com| Techcenture LLC |    checks  | Kev123!  |    Kev123!      | Your registration completed |
-    | female |   Linda   |  Lee     |  14 | May   | 1988 | linda.lee20@gmail.com| Techcenture LLC |    unchecks| Kev123!  |    Kev123!      | Your registration completed |
     | male   |   Kevin   |  Lee     |  12 | April | 1981 | bob.lee20@gmail.com| Techcenture LLC |    checks  | Kev123!  |    Kev123!      | Your registration completed |
     | female |   Linda   |  Lee     |  14 | May   | 1988 | mary.lee20@gmail.com| Techcenture LLC |    unchecks| Kev123!  |    Kev123!      | Your registration completed |
+
+
+    @smoke
+    Examples:
+    |gender  | firstname | lastname | day | month | year | email                | company_name    | newsletter | password | confirm_password|   success_message           |
+    | female |   Linda   |  Lee     |  14 | May   | 1988 | linda.lee20@gmail.com| Techcenture LLC |    unchecks| Kev123!  |    Kev123!      | Your registration completed |
+

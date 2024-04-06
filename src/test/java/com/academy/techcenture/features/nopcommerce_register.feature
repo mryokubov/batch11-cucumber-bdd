@@ -1,4 +1,7 @@
+@regression
 Feature: NopCommerce User Registration Feature
+
+  @smoke
   Scenario: NopCommerce Register New User
     Given user is on the homepage
     When user clicks on the login link

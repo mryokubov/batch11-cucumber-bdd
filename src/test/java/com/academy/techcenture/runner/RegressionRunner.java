@@ -10,10 +10,9 @@ import org.junit.runner.RunWith;
         features = {"src/test/java/com/academy/techcenture/features"},
         glue = {"com/academy/techcenture/step_definitions", "com/academy/techcenture/hooks"},
         dryRun = false,
-        tags = "@register"
-
+        tags = "@regression"
 
 )
-public class Runner {
+public class RegressionRunner {
 
 }
